@@ -17,6 +17,9 @@ for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".
 MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
 mixpanel.init("48d54a18679ac6314995c16ae9d6cd1f");
 mixpanel.track("page load");
+trackMixPanel = funtion(name, fieldId) {
+  mixpanel.track('value of field ' + name + ' has changed to: ' + document.getElementById(fieldId).value);
+}
 </script>
 <!-- end Mixpanel -->
 <script>
@@ -1188,7 +1191,7 @@ pointer-events: initial;
 <div class="style-jy2vqgpt1_right-direction style-jy2vqgpt1" data-disabled="false" style="width: 483px; height: 42px;" id="comp-jy2vqgpl">
 <label style="padding-right:0;padding-left:20px;display:none;margin-bottom:9px;text-align:right;direction:rtl" for="comp-jy2vqgplinput" id="comp-jy2vqgpllabel" class="style-jy2vqgpt1label">
 </label>
-<input type="text" style="padding-right:12px" value="" required="" name="name" placeholder="שם" maxlength="100" class="has-custom-focus style-jy2vqgpt1input" id="comp-jy2vqgplinput">
+<input type="text" style="padding-right:12px" value="" required="" name="name" placeholder="שם" maxlength="100" class="has-custom-focus style-jy2vqgpt1input" id="comp-jy2vqgplinput" onchange="trackMixPanel(\"name\", \"comp-jy2vqgplinput\");">
 <p style="display:none" id="comp-jy2vqgplmessage" class="style-jy2vqgpt1message">
 </p>
 </div>
