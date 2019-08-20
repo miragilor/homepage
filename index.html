@@ -18,6 +18,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mi
 mixpanel.init("48d54a18679ac6314995c16ae9d6cd1f");
 mixpanel.track("page load");
 trackMixPanel = funtion(name, fieldId) {
+  console.log('informing mixpanel: value of field ' + name + ' has changed to: ' + document.getElementById(fieldId).value));
   mixpanel.track('value of field ' + name + ' has changed to: ' + document.getElementById(fieldId).value);
 }
 </script>
